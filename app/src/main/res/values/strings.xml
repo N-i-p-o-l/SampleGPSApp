@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleGpsApp</string>
+    <string name="loginPhoneNumber">Номер телефона</string>
+    <string name="pinCode">PIN-Код</string>
+    <string name="signIn">Войти</string>
+    <string name="null.timer">00:00:00</string>
+    <string name="null.speed">00 kMh</string>
+    <string name="null.distance">0.0 km</string>
+    <string name="startRace">Поехали</string>
+    <string name="endRace">Завершить</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/startRace"
+      android:id="@+id/start.button"
+      android:background="@color/yellow"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="40dp"
+      />
+
+  <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:background="@drawable/circle_background"
+        android:gravity="center"
+        android:text="@string/null.timer"
+        android:textSize="24sp"
+      />
+
+    <TextView
+        android:id="@+id/txt_speed"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/circle_background"
+        android:layout_below="@+id/txt_distance"
+        android:layout_toRightOf="@+id/chronometer"
+        android:gravity="center"
+        android:text="@string/null.speed"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txt_distance"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_alignTop="@+id/chronometer"
+        android:layout_toRightOf="@+id/chronometer"
+        android:layout_toEndOf="@+id/chronometer"
+        android:background="@drawable/circle_background"
+        android:gravity="center"
+        android:text="@string/null.distance"
+        android:textSize="22sp" />
+
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/endRace"
+      android:id="@+id/end.button"
+      android:background="@color/red"
+      android:layout_centerHorizontal="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="40dp"
+      />
+
+</RelativeLayout>
+
