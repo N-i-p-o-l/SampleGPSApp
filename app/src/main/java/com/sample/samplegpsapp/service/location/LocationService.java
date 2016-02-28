@@ -108,7 +108,7 @@ public class LocationService extends Service
           + location.getAccuracy());
       if (!isFirstLocation) {
         distanceBetween = lastLocation.distanceTo(location);
-        distanceSummary =+ distanceBetween;
+        distanceSummary += distanceBetween;
         currentSpeed = distanceBetween * 3600 / (location.getTime() - lastLocation.getTime());
         lastLocation = location;
         LocationNotify.getInstance().locationObservable.notifyStarted();
@@ -121,7 +121,7 @@ public class LocationService extends Service
   }
 
   public float[] getDistanceAndSpeed() {
-    return new float[] {distanceSummary, currentSpeed};
+    return new float[] {distanceSummary / 1000, currentSpeed};
   }
 
   private void stopLocationUpdates() {

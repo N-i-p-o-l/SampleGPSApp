@@ -45,7 +45,11 @@ public class DistanceActivity extends AppCompatActivity implements LocationNotif
         SetEnabledOrDisabledButton(startButton);
         SetEnabledOrDisabledButton(endButton);
 
+        //Reset measurements
         chronometer.setBase(SystemClock.elapsedRealtime());
+        txt_distance.setText("0.0 km");
+        txt_speed.setText("00 kM/h");
+
         chronometer.start();
 
         //Start GPS Service
@@ -83,6 +87,13 @@ public class DistanceActivity extends AppCompatActivity implements LocationNotif
     }
   }
 
+  @Override protected void onResume() {
+    super.onResume();
+    if (locationService != null) {
+      setMeasurements();
+    }
+  }
+
   @Override protected void onDestroy() {
     super.onDestroy();
     if (locationService != null) {locationService.stopSelf();}
@@ -102,9 +113,13 @@ public class DistanceActivity extends AppCompatActivity implements LocationNotif
   };
 
   @Override public void onLocationChangedNotify(LocationNotify locationNotify) {
+    setMeasurements();
+  }
+
+  private void setMeasurements() {
     distanceSummary = locationService.getDistanceAndSpeed()[0];
     currentSpeed = locationService.getDistanceAndSpeed()[1];
-    txt_distance.setText(String.valueOf(distanceSummary));
-    txt_speed.setText(String.valueOf(currentSpeed));
+    txt_distance.setText(String.format("%.1f", distanceSummary) + " km");
+    txt_speed.setText(String.format("%.0f", currentSpeed) + " kM/h");
   }
 }

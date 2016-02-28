@@ -1,2 +1,2 @@
 # SampleGPSApp
-Sample GPS application uses Google Location Api
+Sample GPS application using Google Location Api. App measures speed, distance and time
